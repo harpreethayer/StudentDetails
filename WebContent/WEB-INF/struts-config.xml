@@ -1,0 +1,29 @@
+<!--?xml version="1.0" encoding="ISO-8859-1" ?-->
+ 
+ 
+ 
+<struts-config>
+    <form-beans>
+        <form-bean name="StudentForm" type="com.students.model.StudentForm">
+    </form-bean></form-beans>
+ 
+ 
+    <global-exceptions>
+    </global-exceptions>
+    <global-forwards></global-forwards>
+ 
+    <action-mappings>
+    
+       <action path="/student" parameter="method"
+			type="com.students.controller.StudentAction" name="StudentForm">
+			<forward name="success" path="/index.jsp"/>
+			<forward name="failure" path="/index.jsp"/>
+			<forward name="created" path="/welcome.jsp"/>
+			<forward name="editPage" path="/editPage.jsp"/>
+		   </action>        
+    </action-mappings>
+ 
+     
+    <message-resources parameter="resource.MessageResource"></message-resources>
+     
+</struts-config>
